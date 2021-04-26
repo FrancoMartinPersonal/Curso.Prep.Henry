@@ -207,20 +207,34 @@ function mesesDelAño(array) {
   for (let index = 0; index < array.length; index++) {
     if ( array[index] == "Enero" ||array[index] == "Marzo" ||array[index] == "Noviembre" )  { 
      meses.push(array[index])
-    }else  if ( array[index]!== "Enero" && array[index] !== "Marzo" &&array[index] !== "Noviembre" )  { 
-      return "No se encontraron los meses pedidos"
-     }
-    
-  }
- return meses
+  
+     }  
+}
+
+  if (meses.length<3){
+    return "No se encontraron los meses pedidos"
+  }else {
+   return meses
+  } 
+
    
 }
+
 
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  var element = []
+  for (let index = 0; index < array.length; index++) {
+    
+    if( array[index]>100 ){
+       element.push(array[index])
+    }
+     
+  }
+  return element
 }
 
 
@@ -232,6 +246,23 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var element = []
+  suma = numero;
+ var  index;
+  for ( index = 0; index <10; index++) {
+    suma = suma + 2;
+      if(index === suma){
+       
+        break;
+      
+      }
+     else element.push(suma);
+    
+  }
+  if (index===suma){
+    return "Se interrumpió la ejecución"
+  }
+  return element
 }
 
 
@@ -242,6 +273,25 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var element = []
+  suma = numero;
+ var  index;
+  for ( index = 0; index <10; index++) {
+    
+      if(index === 5){
+       
+        continue;
+      
+      }else{
+        suma = suma + 2;
+        element.push(suma);
+      }
+     
+    
+  }
+ 
+  return element
+
 }
 
 
